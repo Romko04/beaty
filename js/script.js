@@ -25,7 +25,26 @@ new Swiper('.swiper', {
     }
   }
 });
-
+new Swiper('.swiper', {
+  slidesPerView: 1,
+  spaceBetween: 35,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: 'true'
+  },
+  breakpoints: {
+    700:{
+      slidesPerView: 2
+    },
+    900: {
+      slidesPerView: 3
+    }
+  }
+});
 document.addEventListener('click', (e) => {
   if (e.target.classList.contains('anchor')) {
   e.preventDefault()
