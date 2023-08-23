@@ -150,6 +150,19 @@ body {
     flex-direction: column;
 }
 
+.title{
+    color: #333;
+    font-family: Montserrat Alternates;
+    font-size: 39px;
+    font-style: italic;
+    text-align: center;
+    font-weight: 300;
+    line-height: 144.4%;
+    /* 56.316px */
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
 img{
     max-width: 100%;
     object-fit: cover;
@@ -544,6 +557,51 @@ img{
 }
 
 /*PRICE END*/
+
+
+
+/*
+REVIEWS
+*/
+.swiper-android .swiper-slide, .swiper-ios .swiper-slide, .swiper-wrapper--reviews{
+    padding-bottom: 0;
+}
+.swiper__slide-img{
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12.205px;
+}
+.swiper-slide-content--reviews{
+    padding: 29px 18px;
+    border-radius: 20px;
+    background-color: #D8D8D8;;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.swiper__container--reviews{
+    border-radius: 20px;
+background: #966349;
+padding: 38px 19px 40px;
+}
+.swiper--reviews{
+    padding-bottom: 36px;
+}
+.swiper-pagination--reviews .swiper-pagination-bullet{
+    width: 12px;
+    height: 12px;
+    border: 2px solid #fff;
+    background-color: #fff;
+}
+/*
+REVIEWS END
+*/
 @media (max-width: 900px) {
 
     .banner__content {

@@ -5,7 +5,7 @@ const menu = document?.querySelector('.menu__body');
 const body = document?.querySelector('body');
 
 
-new Swiper('.swiper', {
+new Swiper('.swiper--price', {
   slidesPerView: 1,
   spaceBetween: 35,
   navigation: {
@@ -17,7 +17,7 @@ new Swiper('.swiper', {
     clickable: 'true'
   },
   breakpoints: {
-    700:{
+    700: {
       slidesPerView: 2
     },
     900: {
@@ -25,7 +25,7 @@ new Swiper('.swiper', {
     }
   }
 });
-new Swiper('.swiper', {
+new Swiper('.swiper--reviews', {
   slidesPerView: 1,
   spaceBetween: 35,
   navigation: {
@@ -34,10 +34,11 @@ new Swiper('.swiper', {
   },
   pagination: {
     el: '.swiper-pagination',
-    clickable: 'true'
+    clickable: 'true',
+    dynamicBullets: true,
   },
   breakpoints: {
-    700:{
+    700: {
       slidesPerView: 2
     },
     900: {
@@ -45,19 +46,20 @@ new Swiper('.swiper', {
     }
   }
 });
+
 document.addEventListener('click', (e) => {
   if (e.target.classList.contains('anchor')) {
-  e.preventDefault()
-      anchorClick(e.target)
+    e.preventDefault()
+    anchorClick(e.target)
   }
   if (e.target.classList.contains('btn__anchor')) {
     e.preventDefault()
-        anchorClick(e.target.parentNode)
-    }
+    anchorClick(e.target.parentNode)
+  }
   if (e.target.classList.contains('header__burger')) {
     console.log(e.target);
     e.preventDefault()
-      toggleMenu()
+    toggleMenu()
   }
 })
 function anchorClick(e) {
@@ -76,3 +78,21 @@ function toggleMenu() {
   burger.classList.toggle('active');
   burger.classList.contains('active') ? document.body.classList.add('scroll--block') : document.body.classList.remove('scroll--block')
 }
+
+
+// Отримуємо всі зображення у слайдері
+const images = document.querySelectorAll('.swiper__slide-img');
+
+// Встановлюємо бажану висоту для зображень
+const desiredHeight = 300; // Ваша бажана висота
+
+// Змінюємо розмір зображень
+images.forEach(image => {
+  const imgWidth = image.naturalWidth;
+  const imgHeight = image.naturalHeight;
+
+  const newWidth = (desiredHeight / imgHeight) * imgWidth;
+
+  image.style.width = newWidth + 'px';
+  image.style.height = desiredHeight + 'px';
+});
